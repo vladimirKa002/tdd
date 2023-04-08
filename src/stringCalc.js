@@ -9,9 +9,11 @@ const calc = (str) => {
     const splitted = str.split(breakpoint)
     if (splitted == "") return 0
     var result = 0
-    for (let i = 0; i < splitted.length; i++) {
-        result += parseInt(splitted[i])
-    }
+    splitted.forEach(elem => {
+        const num = parseInt(elem)
+        if (num < 0) throw 'negatives not allowed'
+        result += num
+    });
     return result
 };
 
