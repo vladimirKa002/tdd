@@ -11,6 +11,7 @@ const calc = (str) => {
     var result = 0
     splitted.forEach(elem => {
         const num = parseInt(elem)
+        if (num > 1000) return;
         if (num < 0) throw 'negatives not allowed'
         result += num
     });
